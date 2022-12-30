@@ -21,7 +21,7 @@ export default function Emoji() {
     }
   };
   return (
-    <div style={{paddingTop:"10px"}}>
+    <div style={{ paddingTop: "10px" }}>
       <Input
         type="text"
         placeholder="search"
@@ -34,18 +34,38 @@ export default function Emoji() {
             return (
               <div
                 key={index}
-                style={{ border: "1px solid black", display: "flex" }}
+                style={{
+                  paddingTop: "10px",
+                  borderBottom: "1px solid #bbb",
+                  paddingLeft: "10px",
+                  display: "flex",
+                  alignItems: "center",
+                }}
               >
-                <p>{i.symbol}</p>
-                <p>{i.title}</p>
+                <p style={{ fontSize: "19px" }}>{i.symbol}</p>
+                <p style={{ paddingLeft: "10px", fontSize: "19px" }}>
+                  {" "}
+                  {i.title}
+                </p>
               </div>
             );
           })
         : dataEmoji.map((item, index) => {
             return (
-              <div key={index} style={{ display: "flex", paddingTop: "10px",borderBottom:"1px solid red" }}>
-                <p>{item.title}</p>
-                <p>{item.symbol}</p>
+              <div
+                key={index}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  paddingTop: "10px",
+                  borderBottom: "1px solid #bbb",
+                  paddingLeft: "10px",
+                }}
+              >
+                <p style={{ fontSize: "19px" }}>{item.symbol}</p>
+                <p style={{ paddingLeft: "10px", fontSize: "19px" }}>
+                  {item.title}
+                </p>
               </div>
             );
           })}
