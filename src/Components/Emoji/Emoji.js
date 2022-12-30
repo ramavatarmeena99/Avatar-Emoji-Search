@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import { dataEmoji } from "../Data/DataEmoji";
 
 export default function Emoji() {
@@ -20,16 +21,13 @@ export default function Emoji() {
     }
   };
   return (
-    <div>
-      <input
-        style={{ width: "60%", height: "50px", fontSize: "18px",borderRadius:"4px",  border: "1px solid #bbb",  padding: "10px 8px"
-
-      }}
+    <div style={{paddingTop:"10px"}}>
+      <Input
         type="text"
         placeholder="search"
         //   value={query}
         onChange={search}
-      ></input>
+      ></Input>
 
       {searchInput.length > 1
         ? filterResult.map((i, index) => {
@@ -45,7 +43,7 @@ export default function Emoji() {
           })
         : dataEmoji.map((item, index) => {
             return (
-              <div key={index} style={{ display: "flex", paddingTop: "10px" }}>
+              <div key={index} style={{ display: "flex", paddingTop: "10px",borderBottom:"1px solid red" }}>
                 <p>{item.title}</p>
                 <p>{item.symbol}</p>
               </div>
@@ -54,3 +52,12 @@ export default function Emoji() {
     </div>
   );
 }
+
+const Input = styled.input`
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  box-sizing: border-box;
+  font-size: 18px;
+  padding: 10px 8px;
+  width: 60%;
+`;
