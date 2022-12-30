@@ -21,58 +21,37 @@ export default function Emoji() {
     }
   };
   return (
-    <div style={{ paddingTop: "10px" }}>
+    <FullPage>
       <Input
         type="text"
         placeholder="search"
-        //   value={query}
         onChange={search}
       ></Input>
 
       {searchInput.length > 1
         ? filterResult.map((i, index) => {
             return (
-              <div
-                key={index}
-                style={{
-                  paddingTop: "10px",
-                  borderBottom: "1px solid #bbb",
-                  paddingLeft: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <p style={{ fontSize: "19px" }}>{i.symbol}</p>
-                <p style={{ paddingLeft: "10px", fontSize: "19px" }}>
-                  {" "}
-                  {i.title}
-                </p>
-              </div>
+              <ForEmoji key={index}>
+                <ForEmojiSymbol>{i.symbol}</ForEmojiSymbol>
+                <FOrEmojiTitle> {i.title}</FOrEmojiTitle>
+              </ForEmoji>
             );
           })
         : dataEmoji.map((item, index) => {
             return (
-              <div
-                key={index}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  paddingTop: "10px",
-                  borderBottom: "1px solid #bbb",
-                  paddingLeft: "10px",
-                }}
-              >
-                <p style={{ fontSize: "19px" }}>{item.symbol}</p>
-                <p style={{ paddingLeft: "10px", fontSize: "19px" }}>
-                  {item.title}
-                </p>
-              </div>
+              <ForEmoji key={index}>
+                <ForEmojiSymbol>{item.symbol}</ForEmojiSymbol>
+                <FOrEmojiTitle>{item.title}</FOrEmojiTitle>
+              </ForEmoji>
             );
           })}
-    </div>
+    </FullPage>
   );
 }
 
+const FullPage = styled.div`
+padding-top: 10px;
+`;
 const Input = styled.input`
   border-radius: 4px;
   border: 1px solid #bbb;
@@ -80,4 +59,21 @@ const Input = styled.input`
   font-size: 18px;
   padding: 10px 8px;
   width: 60%;
+`;
+
+const ForEmoji = styled.div`
+  padding-top: 10px;
+  border-bottom: 1px solid #bbb;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+`;
+
+const ForEmojiSymbol = styled.p`
+  font-size: 19px;
+`;
+
+const FOrEmojiTitle = styled.p`
+  padding-left: 10px;
+  font-size: 19px;
 `;
