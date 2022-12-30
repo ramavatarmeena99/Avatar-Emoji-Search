@@ -22,7 +22,9 @@ export default function Emoji() {
   return (
     <div>
       <input
-        style={{ width: "300px", height: "50px", fontSize: "17px" }}
+        style={{ width: "60%", height: "50px", fontSize: "18px",borderRadius:"4px",  border: "1px solid #bbb",  padding: "10px 8px"
+
+      }}
         type="text"
         placeholder="search"
         //   value={query}
