@@ -34,6 +34,7 @@ export default function Emoji() {
               <ForEmoji onClick={() =>  navigator.clipboard.writeText(i.symbol)} key={index}>
                 <ForEmojiSymbol>{i.symbol}</ForEmojiSymbol>
                 <FOrEmojiTitle> {i.title}</FOrEmojiTitle>
+
               </ForEmoji>
             );
           })
@@ -43,6 +44,8 @@ export default function Emoji() {
                 <ForEmojiSymbol   
 >{item.symbol}</ForEmojiSymbol>
                 <FOrEmojiTitle>{item.title}</FOrEmojiTitle>
+
+
               </ForEmoji>
             );
           })}
@@ -63,12 +66,14 @@ const Input = styled.input`
 `;
 
 const ForEmoji = styled.div`
-  padding-top: 10px;
   border-bottom: 1px solid #bbb;
   padding-left: 10px;
   display: flex;
   align-items: center;
   cursor: pointer;
+  width:100% ;
+  height:auto ;
+
 `;
 
 const ForEmojiSymbol = styled.p`
