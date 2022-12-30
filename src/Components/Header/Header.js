@@ -20,4 +20,5 @@ const Div = styled.div`
   text-align: center;
   color: #333;
   border-bottom:1px solid gray;
+
 `

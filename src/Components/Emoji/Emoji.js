@@ -39,8 +39,9 @@ export default function Emoji() {
           })
         : dataEmoji.map((item, index) => {
             return (
-              <ForEmoji key={index}>
-                <ForEmojiSymbol>{item.symbol}</ForEmojiSymbol>
+              <ForEmoji onClick={() =>  navigator.clipboard.writeText(item.symbol)} key={index}>
+                <ForEmojiSymbol   
+>{item.symbol}</ForEmojiSymbol>
                 <FOrEmojiTitle>{item.title}</FOrEmojiTitle>
               </ForEmoji>
             );
@@ -67,6 +68,7 @@ const ForEmoji = styled.div`
   padding-left: 10px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 `;
 
 const ForEmojiSymbol = styled.p`
