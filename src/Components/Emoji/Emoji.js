@@ -31,7 +31,7 @@ export default function Emoji() {
       {searchInput.length > 1
         ? filterResult.map((i, index) => {
             return (
-              <ForEmoji key={index}>
+              <ForEmoji onClick={() =>  navigator.clipboard.writeText(i.symbol)} key={index}>
                 <ForEmojiSymbol>{i.symbol}</ForEmojiSymbol>
                 <FOrEmojiTitle> {i.title}</FOrEmojiTitle>
               </ForEmoji>
