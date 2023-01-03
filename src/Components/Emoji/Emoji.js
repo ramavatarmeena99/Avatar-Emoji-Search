@@ -9,7 +9,7 @@ export default function Emoji() {
     setSearchInput(e.target.value);
     if (searchInput !== "") {
       const filterData = dataEmoji.filter((item) => {
-        return Object.values(item)
+        return Object.values(item.title)
           .join("")
           .toLowerCase()
           .includes(searchInput.toLowerCase());
@@ -61,7 +61,7 @@ const Input = styled.input`
   border: 1px solid #bbb;
   box-sizing: border-box;
   font-size: 18px;
-  padding: 10px 8px;
+  padding: 12px 8px;
   width: 60%;
 `;
 
@@ -77,12 +77,12 @@ const ForEmoji = styled.div`
 `;
 
 const ForEmojiSymbol = styled.p`
-  font-size: 19px;
+  font-size: 25px;
 `;
 
 const FOrEmojiTitle = styled.p`
   padding-left: 10px;
-  font-size: 19px;
+  font-size: 25px;
 `;
 
 
